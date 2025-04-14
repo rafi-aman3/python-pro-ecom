@@ -5,6 +5,10 @@ import AboutUsPage from "./pages/AboutUsPage";
 import { ContactUsPage } from "./pages/ContactUsPage";
 import NotFound from "./pages/NotFound";
 import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
+import RegisterPage from "./pages/RegisterPage";
 
 const AppRoutes = () => {
   return (
@@ -14,7 +18,16 @@ const AppRoutes = () => {
           <Route index element={<HomePage />} />
           <Route path="about-us" element={<AboutUsPage />} />
           <Route path="contact-us" element={<ContactUsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
+        </Route>
+
+        <Route path="/login" element={<AuthLayout />}>
+          <Route index element={<LoginPage />} />
+        </Route>
+
+        <Route path="/register" element={<AuthLayout />}>
+          <Route index element={<RegisterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

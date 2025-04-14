@@ -1,15 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router";
+import Navbar from "../components/Layout/Navbar";
+import Footer from "../components/Layout/Footer";
+import Topbar from "../components/Layout/Topbar";
 
 const MainLayout = () => {
   return (
-    <div>
-      <div className="navbar bg-green-900 text-primary-content">
-        <button className="btn btn-ghost text-xl">daisyUI</button>
-      </div>
+    <>
+      <Topbar />
+      <Navbar />
       <Outlet />
-      <footer>THIS IS FOOTER</footer>
-    </div>
+      <Footer />
+    </>
   );
 };
 
