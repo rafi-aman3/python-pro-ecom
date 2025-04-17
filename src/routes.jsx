@@ -9,6 +9,7 @@ import AuthLayout from "./layouts/AuthLayout";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import RegisterPage from "./pages/RegisterPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,9 @@ const AppRoutes = () => {
           <Route path="about-us" element={<AboutUsPage />} />
           <Route path="contact-us" element={<ContactUsPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="products">
+            <Route path=":id" element={<ProductDetailsPage />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
 
