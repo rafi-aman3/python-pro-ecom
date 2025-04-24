@@ -2,16 +2,17 @@ import { ShoppingCart, UserRound } from "lucide-react";
 import React from "react";
 import NavButton from "./NavButton";
 import { Link } from "react-router";
+import { useCartStore } from "../../store/cart";
 
 const Navbar = () => {
+  const { cart } = useCartStore();
   return (
     <div className="navbar flex w-full justify-center items-center bg-white shadow-sm">
       <div className=" max-w-5xl px-4 navbar">
         <div className="navbar-start">
-            <Link to={'/'}>
+          <Link to={"/"}>
             <a className="text-xl font-bold text-[#EB5E28]">GG</a>
-            </Link>
-          
+          </Link>
         </div>
         <div className="navbar-end">
           <NavButton
@@ -22,6 +23,7 @@ const Navbar = () => {
           />
 
           <NavButton
+            item={cart}
             onClick={() => {
               console.log("CART PAGE");
             }}

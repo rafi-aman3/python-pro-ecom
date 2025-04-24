@@ -5,7 +5,7 @@ import { useProductsStore } from "../../store/products";
 const AllProductSection = () => {
   const { products, getAllProducts } = useProductsStore();
 
-  console.log(products);
+  
   
 
   useEffect(() => {
